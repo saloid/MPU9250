@@ -115,6 +115,12 @@ class MPU9250{
     void setMagCalX(float bias,float scaleFactor);
     void setMagCalY(float bias,float scaleFactor);
     void setMagCalZ(float bias,float scaleFactor);
+  
+      // data counts
+    int16_t _axcounts,_aycounts,_azcounts;
+    int16_t _gxcounts,_gycounts,_gzcounts;
+    int16_t _hxcounts,_hycounts,_hzcounts;
+    int16_t _tcounts;
   protected:
     // i2c
     uint8_t _address;
@@ -133,11 +139,7 @@ class MPU9250{
     int _status;
     // buffer for reading from sensor
     uint8_t _buffer[21];
-    // data counts
-    int16_t _axcounts,_aycounts,_azcounts;
-    int16_t _gxcounts,_gycounts,_gzcounts;
-    int16_t _hxcounts,_hycounts,_hzcounts;
-    int16_t _tcounts;
+
     // data buffer
     float _ax, _ay, _az;
     float _gx, _gy, _gz;
